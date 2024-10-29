@@ -9,6 +9,7 @@ $base-font-size: 16
   @each $property, $value in $properties
     #{$property}: px-to-rem($value)
 
+$big-screen: px-to-rem(790)
 
 $tomato: hsl(4, 100%, 67%)
 $tomato-blend: hsl(9, 100%, 50%)
@@ -17,7 +18,6 @@ $charcoal-grey: hsl(235, 18%, 26%)
 $grey: hsl(231, 7%, 60%)
 $white: hsl(0, 0%, 100%)
 $blue-color: hsl(228, 45%, 44%)
-
 
 *,
 *::before,
@@ -35,9 +35,9 @@ body
   background: $white
   font-size: px-to-rem(16)
   font-family: Roboto
+  min-height: 100vh
 
 main
-  min-height: 100vh
   width: 100%
 
   .mobile-image
@@ -111,9 +111,6 @@ button
     background: linear-gradient(to right, $tomato 43%, $tomato-blend 83%)
     box-shadow: 0 4px 10px hsla(4, 100%, 67%, 0.5), 0 6px 10px hsla(9, 100%, 50%, 0.5)
     
-   
-   
-    
 .hide
   display: none
 
@@ -138,7 +135,71 @@ button
 .attribution
   font-size: 11px
   text-align: center
+  color: $tomato
 
   a
-    color: $blue-color
+    color: $tomato-blend
     
+@media screen and (min-width: $big-screen)
+  .mobile-image
+    display: none
+
+  body
+    background: $dark-slate-grey
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: px-to-rem(60)
+    align-items: center
+
+  main
+    background: $white
+    max-width: px-to-rem(1200)
+    min-height: 50vh
+    padding: px-to-rem(0)
+    margin-top: px-to-rem(100)
+    border-radius: px-to-rem(20)
+
+  .card
+    padding: px-to-rem(30)
+    display: flex
+    justify-content: center
+    align-items: center
+
+    .card-text
+      width: 50%
+      padding-left: px-to-rem(35)
+
+    .desktop-image
+      max-width: 50%
+      max-height: 100%
+      padding-left: px-to-rem(25)
+      display: flex
+      justify-content: center
+
+      img
+        max-width: 100%
+        max-height: 100%
+
+  // sucess message
+  .success-message
+    background: $white
+    margin: px-to-rem(150) px-to-rem(40) 0
+    min-height: unset
+    max-height: 70vh
+    max-width: px-to-rem(450)
+    border-radius: px-to-rem(20)
+    padding: px-to-rem(30) px-to-rem(40)
+
+    p
+      font-size: px-to-rem(16)
+      font-weight: 400
+
+    button
+      margin-top: unset
+      margin : px-to-rem(18) 0
+
+
+      
+ 
+  

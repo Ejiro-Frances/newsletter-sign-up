@@ -16,18 +16,19 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [You can view the live site here](https://newsletter-sign-up-phi-six.vercel.app/)
 
 ### Technologies Used
 
 - HTML
-- CSS
+- SASS
 - JAVASCRIPT
 
 ## My process
 
+I built the mobile view first and then expanded to get the tablet and desktop view
+
 ## Contact Me
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- X - [@france_ssa](https://www.x.com/france_ssa)
+- Email: francesejiro@yahoo.com
+- X: [@france_ssa](https://www.x.com/france_ssa)

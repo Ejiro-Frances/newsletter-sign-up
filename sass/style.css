@@ -18,10 +18,10 @@ body {
   background: hsl(0, 0%, 100%);
   font-size: 1rem;
   font-family: Roboto;
+  min-height: 100vh;
 }
 
 main {
-  min-height: 100vh;
   width: 100%;
 }
 main .mobile-image img {
@@ -120,7 +120,68 @@ button:hover {
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: hsl(4, 100%, 67%);
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(9, 100%, 50%);
+}
+
+@media screen and (min-width: 49.375rem) {
+  .mobile-image {
+    display: none;
+  }
+  body {
+    background: hsl(234, 29%, 20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.75rem;
+    align-items: center;
+  }
+  main {
+    background: hsl(0, 0%, 100%);
+    max-width: 75rem;
+    min-height: 50vh;
+    padding: 0rem;
+    margin-top: 6.25rem;
+    border-radius: 1.25rem;
+  }
+  .card {
+    padding: 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card .card-text {
+    width: 50%;
+    padding-left: 2.1875rem;
+  }
+  .card .desktop-image {
+    max-width: 50%;
+    max-height: 100%;
+    padding-left: 1.5625rem;
+    display: flex;
+    justify-content: center;
+  }
+  .card .desktop-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .success-message {
+    background: hsl(0, 0%, 100%);
+    margin: 9.375rem 2.5rem 0;
+    min-height: unset;
+    max-height: 70vh;
+    max-width: 28.125rem;
+    border-radius: 1.25rem;
+    padding: 1.875rem 2.5rem;
+  }
+  .success-message p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .success-message button {
+    margin-top: unset;
+    margin: 1.125rem 0;
+  }
 }/*# sourceMappingURL=style.css.map */
