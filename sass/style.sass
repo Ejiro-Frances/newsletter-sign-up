@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+
+$base-font-size: 16
+
+@function px-to-rem($px-value)
+  @return #{$px-value / $base-font-size}rem
+
+=remify($properties...)
+  @each $property, $value in $properties
+    #{$property}: px-to-rem($value)
+
+
+$tomato: hsl(4, 100%, 67%)
+$tomato-blend: hsl(9, 100%, 50%)
+$dark-slate-grey: hsl(234, 29%, 20%)
+$charcoal-grey: hsl(235, 18%, 26%)
+$grey: hsl(231, 7%, 60%)
+$white: hsl(0, 0%, 100%)
+$blue-color: hsl(228, 45%, 44%)
+
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+*
+  margin: 0
+  padding: 0
+
+html
+  font-size: 62.5%
+
+body
+  background: $white
+  font-size: px-to-rem(16)
+  font-family: Roboto
+
+main
+  min-height: 100vh
+  width: 100%
+
+  .mobile-image
+    img
+      width: 100%
+
+.card-text
+  padding: px-to-rem(25)
+  color: $charcoal-grey
+  width: 95%
+  line-height: 1.5
+  font-size: px-to-rem(28)
+
+  h1
+    font-size: px-to-rem(60)
+    font-weight: 700
+    color: $dark-slate-grey
+
+  p
+    padding: px-to-rem(16) 0
+    
+
+ul
+  list-style-image: url("../assets/images/icon-list.svg")
+  padding-left: px-to-rem(30)
+
+  li
+    padding-bottom: px-to-rem(10)
+    padding-left: px-to-rem(10)
+   
+
+form
+  label
+    font-size: px-to-rem(18)
+    font-weight: 700
+    color: $dark-slate-grey
+
+  span
+    color: $tomato
+    font-size: px-to-rem(14)
+
+  input
+    margin: px-to-rem(8) 0
+    padding: px-to-rem(15)
+    width: 100%
+    border-radius: px-to-rem(10)
+    border: 1px solid $grey
+    outline: none
+    transition: border-color 0.3s ease
+    cursor: pointer
+    
+
+    &::value
+      color: $grey
+      font-size: px-to-rem(16)
+
+
+button
+  cursor: pointer
+  Background: $dark-slate-grey
+  color: $white
+  margin: px-to-rem(15) 0 0
+  padding: px-to-rem(25) px-to-rem(15)
+  width: 100%
+  border-radius: px-to-rem(10)
+  border: none
+  outline: none
+  transition: border-color 0.3s ease
+
+  &:hover
+    background: linear-gradient(to right, $tomato 43%, $tomato-blend 83%)
+    box-shadow: 0 4px 10px hsla(4, 100%, 67%, 0.5), 0 6px 10px hsla(9, 100%, 50%, 0.5)
+    
+   
+   
+    
+.hide
+  display: none
+
+.success-message
+  margin: px-to-rem(150) px-to-rem(40) 0
+  min-height: 100vh
+
+  h1
+    padding: px-to-rem(20) 0
+    font-size: px-to-rem(38)
+
+  p
+    font-size: px-to-rem(28)
+    font-weight: 400
+
+    span
+      font-weight: 700
+
+  button
+    margin-top: 44vh
+
+.attribution
+  font-size: 11px
+  text-align: center
+
+  a
+    color: $blue-color
+    
