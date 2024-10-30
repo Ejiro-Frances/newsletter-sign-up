@@ -90,11 +90,11 @@ form input::placeholder {
   color: hsl(4, 100%, 67%);
 }
 
-::-moz-placeholder.active {
+.active::-moz-placeholder {
   color: hsl(4, 100%, 67%);
 }
 
-::placeholder.active {
+.active::placeholder {
   color: hsl(4, 100%, 67%);
 }
 
