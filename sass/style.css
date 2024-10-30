@@ -18,22 +18,21 @@ body {
   background: hsl(0, 0%, 100%);
   font-size: 1rem;
   font-family: Roboto;
-  min-height: 100vh;
 }
 
 main {
   width: 100%;
+  min-height: 100vh;
 }
-main .mobile-image img {
+main .image-container img {
   width: 100%;
 }
 
 .card-text {
-  padding: 1.5625rem;
+  padding: 1.25rem 2.25rem;
   color: hsl(235, 18%, 26%);
-  width: 95%;
   line-height: 1.5;
-  font-size: 1.75rem;
+  font-size: 1.875rem;
 }
 .card-text h1 {
   font-size: 3.75rem;
@@ -41,7 +40,7 @@ main .mobile-image img {
   color: hsl(234, 29%, 20%);
 }
 .card-text p {
-  padding: 1rem 0;
+  padding: 1rem 0 1.375rem;
 }
 
 ul {
@@ -53,18 +52,23 @@ ul li {
   padding-left: 0.625rem;
 }
 
+form {
+  margin-top: 0.8125rem;
+  font-family: inherit;
+}
 form label {
   font-size: 1.125rem;
   font-weight: 700;
   color: hsl(234, 29%, 20%);
+  padding-right: 13.25rem;
 }
 form span {
   color: hsl(4, 100%, 67%);
-  font-size: 0.875rem;
+  font-size: 1.125rem;
 }
 form input {
-  margin: 0.5rem 0;
-  padding: 0.9375rem;
+  margin-top: 0.21875rem;
+  padding: 1.25rem;
   width: 100%;
   border-radius: 0.625rem;
   border: 1px solid hsl(231, 7%, 60%);
@@ -72,25 +76,44 @@ form input {
   transition: border-color 0.3s ease;
   cursor: pointer;
 }
-form input::value {
+form input::-moz-placeholder {
   color: hsl(231, 7%, 60%);
-  font-size: 1rem;
+  font-size: 1.75rem;
+}
+form input::placeholder {
+  color: hsl(231, 7%, 60%);
+  font-size: 1.75rem;
+}
+
+.active {
+  border: 1px solid hsl(4, 100%, 67%);
+  color: hsl(4, 100%, 67%);
+}
+
+::-moz-placeholder.active {
+  color: hsl(4, 100%, 67%);
+}
+
+::placeholder.active {
+  color: hsl(4, 100%, 67%);
 }
 
 button {
   cursor: pointer;
   Background: hsl(234, 29%, 20%);
   color: hsl(0, 0%, 100%);
-  margin: 0.9375rem 0 0;
-  padding: 1.5625rem 0.9375rem;
+  margin-top: 1.125rem;
+  padding: 1.25rem;
+  font-size: 1.75rem;
   width: 100%;
   border-radius: 0.625rem;
   border: none;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: all 0.6s ease-in;
 }
 button:hover {
-  background: linear-gradient(to right, hsl(4, 100%, 67%) 43%, hsl(9, 100%, 50%) 83%);
+  background: hsl(4, 100%, 67%);
+  transition: all 1s ease;
   box-shadow: 0 4px 10px hsla(4, 100%, 67%, 0.5), 0 6px 10px hsla(9, 100%, 50%, 0.5);
 }
 
@@ -100,15 +123,18 @@ button:hover {
 
 .success-message {
   margin: 9.375rem 2.5rem 0;
-  min-height: 100vh;
+  padding-bottom: 0;
 }
 .success-message h1 {
-  padding: 1.25rem 0;
-  font-size: 2.375rem;
+  padding: 2.75rem 0;
+  font-size: 4.375rem;
+  font-weight: 700;
+  line-height: 1;
 }
 .success-message p {
-  font-size: 1.75rem;
+  font-size: 1.875rem;
   font-weight: 400;
+  line-height: 1.5;
 }
 .success-message p span {
   font-weight: 700;
@@ -118,54 +144,55 @@ button:hover {
 }
 
 .attribution {
-  font-size: 11px;
-  text-align: center;
-  color: hsl(4, 100%, 67%);
-}
-.attribution a {
-  color: hsl(9, 100%, 50%);
+  visibility: hidden;
 }
 
-@media screen and (min-width: 49.375rem) {
-  .mobile-image {
-    display: none;
-  }
+@media screen and (min-width: 30pxrem) {
   body {
-    background: hsl(234, 29%, 20%);
+    max-width: 80%;
+  }
+  form {
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 49.375rem) {
+  body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 3.75rem;
     align-items: center;
+    flex-direction: column;
+    background: hsl(234, 29%, 20%);
+    padding-top: 7%;
   }
   main {
     background: hsl(0, 0%, 100%);
-    max-width: 75rem;
-    min-height: 50vh;
+    max-width: 62.5rem;
+    min-height: unset;
     padding: 0rem;
-    margin-top: 6.25rem;
     border-radius: 1.25rem;
   }
   .card {
-    padding: 1.875rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row-reverse;
+    padding: 1.125rem;
   }
   .card .card-text {
-    width: 50%;
+    width: 60%;
     padding-left: 2.1875rem;
+    font-size: 1.4375rem;
   }
-  .card .desktop-image {
-    max-width: 50%;
-    max-height: 100%;
-    padding-left: 1.5625rem;
-    display: flex;
-    justify-content: center;
+  .card .image-container {
+    content: url("../assets/images/illustration-sign-up-desktop.svg");
+    max-width: 40%;
   }
-  .card .desktop-image img {
+  .card .image-container img {
     max-width: 100%;
     max-height: 100%;
+  }
+  .card label {
+    padding-right: 12.1875rem;
   }
   .success-message {
     background: hsl(0, 0%, 100%);
@@ -183,5 +210,14 @@ button:hover {
   .success-message button {
     margin-top: unset;
     margin: 1.125rem 0;
+  }
+  .attribution {
+    visibility: visible;
+    font-size: 11px;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+  }
+  a {
+    color: hsl(4, 100%, 67%);
   }
 }/*# sourceMappingURL=style.css.map */

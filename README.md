@@ -26,7 +26,7 @@ Users should be able to:
 
 ## My process
 
-I built the mobile view first and then expanded to get the tablet and desktop view
+I built the mobile view first and then expanded to get the desktop view.
 
 ## Contact Me
 

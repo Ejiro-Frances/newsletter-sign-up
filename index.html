@@ -19,7 +19,7 @@
   <body>
     <main>
       <section class="card">
-        <article class="mobile-image">
+        <article class="image-container">
           <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
         </article>
         <!-- Sign-up form start -->
@@ -34,20 +34,18 @@
 
           <form>
             <label for="email"> Email address </label>
-            <br />
-            <span class="error-state"></span>
-            <input type="email" id="email" value="email@company.com" />
-            <br />
-            <button>Subscribe to monthly newsletter</button>
+            <span class="error-message"></span>
+            <input type="email" id="email" placeholder="email@company.com" />
+            <button id="sub-btn">Subscribe to monthly newsletter</button>
           </form>
         </article>
 
-        <article class="desktop-image">
+        <!-- <article class="desktop-image">
           <img
             src="./assets/images/illustration-sign-up-desktop.svg"
             alt="illustration-sign-up-desktop"
           />
-        </article>
+        </article> -->
       </section>
     </main>
 
@@ -55,13 +53,17 @@
 
     <!-- Success message start -->
     <article class="success-message hide">
-      <img src="./assets/images/icon-success.svg" alt="" />
+      <img
+        src="./assets/images/icon-success.svg"
+        alt="tomato colored check mark"
+      />
       <h1>Thanks for subscribing!</h1>
       <p>
-        A confirmation email has been sent to <span>ash@loremcompany.com</span>.
-        Please open it and click the button inside to confirm your subscription
+        A confirmation email has been sent to
+        <span class="user-email"></span>. Please open it and click the button
+        inside to confirm your subscription
       </p>
-      <button>Dismiss message</button>
+      <button id="dis-btn">Dismiss message</button>
     </article>
     <!-- Success message end -->
 
