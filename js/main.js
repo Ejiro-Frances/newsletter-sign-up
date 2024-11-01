@@ -2,7 +2,7 @@ const form = document.querySelector("form");
 const card = document.querySelector("main");
 const successMessage = document.querySelector(".success-message");
 const userEmail = document.querySelector(".user-email");
-const emailInput = document.querySelector("input").value;
+const emailInput = document.querySelector("input");
 const dismissButton = document.getElementById("dis-btn");
 const errorMessage = document.querySelector(".error-message");
 
@@ -17,17 +17,21 @@ const errorMessage = document.querySelector(".error-message");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const email = emailInput.value.trim();
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // || emailInput !== emailPattern)
 
-  if (emailInput === "") {
-    errorMessage.textContent = "valid email required";
-    document.querySelector("input").classList.add("active");
-  } else if (emailInput !== emailPattern) {
-    errorMessage.textContent = "invalid email";
+  if (!email.match(emailRegex)) {
+    errorMessage.innerHTML = "valid email required";
+    emailInput.classList.add("active");
   } else {
+    errorMessage.innerHTML = "";
+    emailInput.classList.remove("active");
     card.classList.add("hide");
     successMessage.classList.remove("hide");
+    userEmail.innerHTML = email;
     document.querySelector(".attribution").classList.add("hide");
   }
 });
@@ -35,5 +39,6 @@ form.addEventListener("submit", (e) => {
 dismissButton.addEventListener("click", () => {
   successMessage.classList.add("hide");
   card.classList.remove("hide");
-  emailInput = "";
+  emailInput.value = "";
+  emailInput.classList.remove("active");
 });

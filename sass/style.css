@@ -122,7 +122,7 @@ button:hover {
 }
 
 .success-message {
-  margin: 9.375rem 2.5rem 0;
+  margin: 10vh 10vw 0;
   padding-bottom: 0;
 }
 .success-message h1 {
@@ -140,7 +140,7 @@ button:hover {
   font-weight: 700;
 }
 .success-message button {
-  margin-top: 44vh;
+  margin-top: 32vh;
 }
 
 .attribution {
