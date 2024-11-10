@@ -6,13 +6,40 @@ const emailInput = document.querySelector("input");
 const dismissButton = document.getElementById("dis-btn");
 const errorMessage = document.querySelector(".error-message");
 
-// function validateEmail(email) {
-//   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//   if (email === "") {
-//     errorMessage.textContent = "Please enter a valid email.";
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+
+//   const email = emailInput.value.trim();
+//   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+//   if (!email.match(emailRegex)) {
+//     errorMessage.innerHTML = "valid email required";
+//     emailInput.classList.add("active");
+//   } else {
+//     errorMessage.innerHTML = "";
+//     emailInput.classList.remove("active");
+//     card.classList.add("hide");
+//     successMessage.classList.remove("hide");
+//     userEmail.innerHTML = email;
+//     document.querySelector(".attribution").classList.add("hide");
 //   }
-//   return emailPattern.test(email);
-// }
+// });
+
+// dismissButton.addEventListener("click", () => {
+//   successMessage.classList.add("hide");
+//   card.classList.remove("hide");
+//   emailInput.value = "";
+//   emailInput.classList.remove("active");
+// });
+
+// Reusable function to show or hide an element
+function toggleVisibility(element, shouldShow) {
+  if (shouldShow) {
+    element.classList.remove("hide");
+  } else {
+    element.classList.add("hide");
+  }
+}
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -20,25 +47,22 @@ form.addEventListener("submit", (e) => {
   const email = emailInput.value.trim();
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // || emailInput !== emailPattern)
-
   if (!email.match(emailRegex)) {
-    errorMessage.innerHTML = "valid email required";
+    errorMessage.innerHTML = "Valid email required";
     emailInput.classList.add("active");
   } else {
     errorMessage.innerHTML = "";
     emailInput.classList.remove("active");
-    card.classList.add("hide");
-    successMessage.classList.remove("hide");
+    toggleVisibility(card, false); // Hide the main card
+    toggleVisibility(successMessage, true); // Show the success message
     userEmail.innerHTML = email;
-    document.querySelector(".attribution").classList.add("hide");
+    toggleVisibility(attribution, false); // Hide the attribution section
   }
 });
 
 dismissButton.addEventListener("click", () => {
-  successMessage.classList.add("hide");
-  card.classList.remove("hide");
+  toggleVisibility(successMessage, false); // Hide the success message
+  toggleVisibility(card, true); // Show the main card
   emailInput.value = "";
   emailInput.classList.remove("active");
 });

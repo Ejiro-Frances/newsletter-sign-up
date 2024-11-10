@@ -52,7 +52,6 @@ body
   font-family: Roboto
   
 main
-  width: 100%
   min-height: 100vh
 
   .image-container
@@ -102,12 +101,15 @@ form
     border-radius: px-to-rem(10)
     border: 1px solid $grey
     outline: none
-    transition: border-color 0.3s ease
     cursor: pointer
 
     &::placeholder
       color: $grey
       font-size: px-to-rem(28)
+     
+    &:focus
+      box-shadow: 1px 4px 10px rgba(250,200,200,0.4)
+      background: $white
 
 .active
   border: 1px solid $tomato
@@ -128,11 +130,11 @@ button
   border-radius: px-to-rem(10)
   border: none
   outline: none
-  transition: all 0.6s ease-in
+  transition: all 0.1s ease-in
 
   &:hover
     background: $tomato
-    transition: all 1s ease
+    transition: all 0.2s ease
     box-shadow: 0 4px 10px hsla(4, 100%, 67%, 0.5), 0 6px 10px hsla(9, 100%, 50%, 0.5)
     
 .hide
@@ -149,18 +151,16 @@ button
     line-height: 1
 
   p
-    font-size: px-to-rem(30)
+    font-size: px-to-rem(32)
     font-weight: 400
-    line-height: 1.5
+    line-height: 1.7
+    margin-bottom: px-to-rem(15)
 
     span
       font-weight: 700
 
   button
-    margin-top: 32vh
-
-.attribution
-  visibility: hidden
+    margin-top: 28vh
 
 @media screen and (min-width: $big-screen)
   body
@@ -202,15 +202,15 @@ button
   // sucess message
   .success-message
     background: $white
-    margin: px-to-rem(60) px-to-rem(40) 0
+    margin: 0 auto
     min-height: unset
-    max-height: 70vh
+    min-height: 70vh
     max-width: px-to-rem(450)
     border-radius: px-to-rem(20)
     padding: px-to-rem(30) px-to-rem(40)
 
     p
-      font-size: px-to-rem(16)
+      font-size: px-to-rem(20)
       font-weight: 400
 
     button
@@ -218,7 +218,6 @@ button
       margin : px-to-rem(18) 0
 
   .attribution
-    visibility: visible
     font-size: 11px
     text-align: center
     color: $white

@@ -21,7 +21,6 @@ body {
 }
 
 main {
-  width: 100%;
   min-height: 100vh;
 }
 main .image-container img {
@@ -73,7 +72,6 @@ form input {
   border-radius: 0.625rem;
   border: 1px solid hsl(231, 7%, 60%);
   outline: none;
-  transition: border-color 0.3s ease;
   cursor: pointer;
 }
 form input::-moz-placeholder {
@@ -83,6 +81,10 @@ form input::-moz-placeholder {
 form input::placeholder {
   color: hsl(231, 7%, 60%);
   font-size: 1.75rem;
+}
+form input:focus {
+  box-shadow: 1px 4px 10px rgba(250, 200, 200, 0.4);
+  background: hsl(0, 0%, 100%);
 }
 
 .active {
@@ -109,11 +111,11 @@ button {
   border-radius: 0.625rem;
   border: none;
   outline: none;
-  transition: all 0.6s ease-in;
+  transition: all 0.1s ease-in;
 }
 button:hover {
   background: hsl(4, 100%, 67%);
-  transition: all 1s ease;
+  transition: all 0.2s ease;
   box-shadow: 0 4px 10px hsla(4, 100%, 67%, 0.5), 0 6px 10px hsla(9, 100%, 50%, 0.5);
 }
 
@@ -132,19 +134,16 @@ button:hover {
   line-height: 1;
 }
 .success-message p {
-  font-size: 1.875rem;
+  font-size: 2rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.7;
+  margin-bottom: 0.9375rem;
 }
 .success-message p span {
   font-weight: 700;
 }
 .success-message button {
-  margin-top: 32vh;
-}
-
-.attribution {
-  visibility: hidden;
+  margin-top: 28vh;
 }
 
 @media screen and (min-width: 49.375rem) {
@@ -188,15 +187,15 @@ button:hover {
   }
   .success-message {
     background: hsl(0, 0%, 100%);
-    margin: 3.75rem 2.5rem 0;
+    margin: 0 auto;
     min-height: unset;
-    max-height: 70vh;
+    min-height: 70vh;
     max-width: 28.125rem;
     border-radius: 1.25rem;
     padding: 1.875rem 2.5rem;
   }
   .success-message p {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 400;
   }
   .success-message button {
@@ -204,7 +203,6 @@ button:hover {
     margin: 1.125rem 0;
   }
   .attribution {
-    visibility: visible;
     font-size: 11px;
     text-align: center;
     color: hsl(0, 0%, 100%);
